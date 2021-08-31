@@ -24,7 +24,7 @@ This is the first installation of this tool.
 
 <a name="usage"></a>
 
-- This tool can be used to add and track workout achievements.
+This tool can be used to add and track workout achievements.
 
 ![Homepage ](images/home.jpg)
 ![Add Workout 1](images/cardio.jpg)
