@@ -3,7 +3,7 @@ const Workout = require("../models/workout.js");
 const { route } = require("./htmlRoutes");
 
 router.post("api/workouts", ({ body }, res) => {
-  Workout.create({ body })
+  Workout.create(body)
     .then((dbWorkouts) => {
       res.json(dbWorkouts);
     })
@@ -13,7 +13,7 @@ router.post("api/workouts", ({ body }, res) => {
 });
 
 router.delete("api/workouts", ({ body }, res) => {
-  Workout.destroy({ body })
+  Workout.destroy(body)
     .then((dbWorkouts) => {
       res.json(dbWorkouts);
     })
@@ -22,7 +22,7 @@ router.delete("api/workouts", ({ body }, res) => {
     });
 });
 
-router.get("api/workouts", ({ body }, res) => {
+router.get("api/workouts", (req, res) => {
   Workout.aggregate([
     {
       $addFields: {
@@ -44,7 +44,7 @@ router.get("api/workouts", ({ body }, res) => {
     });
 });
 
-router.get("api/workouts/range", ({ body }, res) => {
+router.get("api/workouts/range", (req, res) => {
   Workout.aggregate([
     {
       $addFields: {
